@@ -29,7 +29,18 @@ and together they make the computer work.
 | PSU | Powers all components | Heart |
 | Motherboard | Connects all components together | Nervous system |
 
----
+
+
+---## How This Connects to MY SOC Work
+
+Understanding computer fundamentals is not just theory —
+every concept in this module directly applies to real SOC analyst work.
+- Knowing CPU, RAM, and storage helps you understand
+  what malware does when it runs on a system
+- High CPU or RAM usage on an endpoint can be an
+  indicator of a cryptominer or ransomware running in the background
+- SOC analysts review process and memory activity during
+  incident response to find malicious behaviour
 
 ## What Happens When You Press the Start Button?
 
@@ -49,6 +60,13 @@ and together they make the computer work.
 
 > ⚠️ The boot process is a target for hackers — malware can embed itself here to persist across reboots
 
+## How This Connects to SOC Work
+- Attackers use **bootkits** and **rootkits** to embed malware
+  into the boot process so it survives reboots and reinstalls
+- As a SOC analyst you need to recognise when a system's
+  boot sequence has been tampered with
+- Tools like Secure Boot and UEFI integrity checks are
+  defence mechanisms you will encounter in enterprise environments
 ---
 
 ## Computer Types
@@ -82,6 +100,14 @@ Every design is a trade-off:
 - **Reliability costs money** — servers use redundancy (extra power supplies, disks) to avoid failure
 - **Purpose shapes everything** — there is no best computer, only the right tool for the job
 
+## How This Connects to SOC Work
+- SOC analysts monitor many different device types —
+  not just laptops and desktops but also servers, IoT devices,
+  and embedded systems
+- IoT devices are often unpatched and poorly secured,
+  making them a common entry point for attackers
+- Embedded systems in industrial environments (OT/ICS)
+  are high-value targets and require specialised monitoring
 ---
 
 ## Client-Server Basics
@@ -111,6 +137,15 @@ allowing systems to interconnect and specialise.
 - **DNS** — Domain Name Service — resolves domain names to IP addresses
 - **IP Address** — the location address of a server on a network
 
+## How This Connects to SOC Work
+- Almost every attack you will investigate involves
+  a client making requests to a server
+- Understanding who initiated a connection (client)
+  and who responded (server) is fundamental to
+  reading network logs and SIEM alerts
+- Command and Control (C2) malware uses the client-server
+  model — infected machines (clients) reach out to attacker
+  servers to receive instructions
 ---
 
 ## HTTP in Detail
@@ -148,6 +183,15 @@ allowing systems to interconnect and specialise.
 - **Response Header** — metadata about the response
 - **Response Body** — the actual requested content (HTML, JSON etc.)
 
+## How This Connects to SOC Work
+- Web-based attacks (phishing, SQLi, XSS) all happen over HTTP/HTTPS
+- SOC analysts examine HTTP request logs to spot
+  suspicious methods, unusual paths, or unexpected status codes
+- Knowing common ports helps identify anomalies —
+  e.g. traffic on port 4444 is a red flag (common Metasploit port)
+- Unexpected open ports on a server can indicate
+  a backdoor or misconfiguration
+
 ---
 
 ## Virtualisation Basics
@@ -169,6 +213,7 @@ Problems with this approach:
 | Apartments | Virtual Machines (VMs) |
 | Tenants | Applications / Operating Systems |
 | Building manager | Hypervisor |
+
 
 ---
 
@@ -266,6 +311,15 @@ and all its dependencies — without needing a full OS.
 - Flexibility, portability, scalability
 - Centralised management
 
+## How This Connects to SOC Work
+- Most enterprise infrastructure runs on VMs —
+  understanding this helps you investigate alerts in virtualised environments
+- Malware analysis is done inside isolated VMs to
+  safely detonate and study malicious files
+- Attackers attempt **VM escape** techniques to break out
+  of sandboxes — knowing how VMs work helps you understand this threat
+- Containers (Docker) are increasingly targeted —
+  misconfigured containers can give attackers access to the host system
 ---
 
 ## Cloud Computing Fundamentals
@@ -346,3 +400,14 @@ Physical Servers → Virtualisation → Containers → Cloud Computing
 Cloud computing is built on virtualisation and containerisation.
 Understanding these layers — from physical hardware → VMs → containers → cloud — is essential
 for any SOC analyst working with modern infrastructure, incident response, or threat detection.
+
+How this connects to my soc work 
+- Modern organisations run workloads on AWS, Azure, or GCP —
+  SOC analysts must understand cloud infrastructure to investigate alerts
+- Cloud misconfigurations are one of the biggest causes
+  of data breaches (e.g. publicly exposed S3 buckets)
+- Cloud environments generate their own logs (CloudTrail, Azure Monitor)
+  which SOC analysts use to detect suspicious activity
+- Understanding IaaS, PaaS, and SaaS helps you know
+  what your organisation is responsible for securing vs what the provider handles
+
