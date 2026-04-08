@@ -72,6 +72,7 @@
   - Network Address — identifies start of network
   - Host Address — identifies individual devices
   - Default Gateway — sends data to other networks
+    
 **ARP (Address Resolution Protocol):**
 - Maps IP addresses to MAC addresses
 - Sends ARP Request (broadcast) → receives ARP Reply
