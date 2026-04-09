@@ -1,6 +1,6 @@
 # Room 01: Offensive Security Intro
 # TryHackMe — Cyber Security 101
-# Module -01 Start Your Cyber Security Journey
+
 
 ## What is Offensive Security?
 
