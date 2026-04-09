@@ -1,6 +1,5 @@
 # Room 02: Defensive Security Intro
 # TryHackMe — Cyber Security 101
-# Module -01 Start Your Cyber Security Journey
 
 ## What is Defensive Security?
 
