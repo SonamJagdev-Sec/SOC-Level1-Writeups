@@ -1,6 +1,6 @@
 # Room 03: Search Skills
 # TryHackMe — Cyber Security 101
-# Module -01 Start Your Cyber Security Journey
+
 
 **Platform:** TryHackMe  
 **Path:** Cyber Security 101  
